@@ -1,0 +1,192 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Filippo Squillace <sqoox85@gmail.com>, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-10-28 16:49+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+
+#: greetme/forms.py:23
+msgid "Not enough words!"
+msgstr "Numero di parole non sufficienti!"
+
+#: greetme/forms.py:26
+msgid "You have too much greetings. Delete some of them."
+msgstr "Hai troppi messaggi di auguri. Cancella uno di loro."
+
+#: greetme/views.py:272
+msgid "Put here the greeting"
+msgstr "Inserisci qui una frase di auguri"
+
+#: templates/add_greets.html:4
+msgid "Greet Me - Add greeting"
+msgstr "GreetMe - Aggiungi Augurio"
+
+#: templates/add_greets.html:10
+#, python-format
+msgid "Add your greeting sentence %(name)s!!!"
+msgstr "Aggiungi la tua frase di augurio %(name)s!!!"
+
+#: templates/add_greets.html:13
+msgid ""
+"Put @first_name or @last_name so the application will replace them with "
+"first and last name of your friend."
+msgstr ""
+"Inserisci @first_name oppure @last_name in modo che l'applicazione "
+"sostituirà con il nome e cognome del tuo amico."
+
+#: templates/add_greets.html:14
+msgid ""
+"For example: \"Happy birthday @first_name!!!\"\n"
+"    It will be rendered as \"Happy birthday David!!!\""
+msgstr ""
+"Per esempio: \"Happy birthday @first_name!!!\"\n"
+" Sarà tradotto come \"Happy birthday David!!!\""
+
+#: templates/add_greets.html:23 templates/options.html:14
+msgid "Please correct the error below."
+msgid_plural "Please correct the errors below."
+msgstr[0] "Per favore correggi l'errore qui sotto."
+msgstr[1] "Per favore correggi gli errori qui sotto."
+
+#: templates/add_greets.html:36
+msgid "Language:"
+msgstr "Lingua:"
+
+#: templates/add_greets.html:48
+msgid "Gender:"
+msgstr "Sesso:"
+
+#: templates/add_greets.html:60
+msgid "Greeting:"
+msgstr "Frase d'auguri:"
+
+#: templates/add_greets.html:65 templates/options.html:55
+msgid "Save"
+msgstr "Salva"
+
+#: templates/add_greets.html:66 templates/options.html:56
+msgid "Back"
+msgstr "Indietro"
+
+#: templates/index.html:5
+msgid "Greet Me - Home"
+msgstr "GreetMe - Home"
+
+#: templates/index.html:12
+#, python-format
+msgid "Welcome %(first_name)s!!!"
+msgstr "Benvenuto %(first_name)s!!!"
+
+#: templates/index.html:15
+msgid ""
+"This application is very simple!!!\n"
+"  Just add your greeting sentences and the application automatically will "
+"give greetings at your friends!!\n"
+"  That's all!!!"
+msgstr ""
+"Questa applicazione è piuttosto semplice!\n"
+"Aggiungi le tue frasi di auguri e l'applicazione automaticamente farà gli "
+"auguri ai tuoi amici il giorno del loro compleanno!!\n"
+"E' tutto!"
+
+#: templates/index.html:19
+msgid ""
+"<b>Warning:</b> If you change your Facebook password remember to come back "
+"in this page of the GreetMe app (Just go to Facebook Homepage and click on "
+"the Phone application in the left side).\n"
+"  In this way, GreetMe can update the new access token matched with the new "
+"password and send greetings to your friends. Otherwise, GreetMe couldn't "
+"work for you until you won't do that."
+msgstr ""
+"<b>Nota:</b> Se cambi la password di Facebook ricordati di ritornare in "
+"questa pagina dell'applicazione GreetMe (Vai su la Homepage di Facebook e "
+"clicca su l'applicazione Phone presente nel lato sinistro).\n"
+"  In questo modo, GreetMe può aggiornare il nuovo access token associato "
+"alla nuova password e mandare, cosi, gli auguri ai tuoi amici. GreetMe "
+"potrebbe non funzionare  per te fino a quando non farai questo."
+
+#: templates/index.html:31
+msgid "Select"
+msgstr "Seleziona"
+
+#: templates/index.html:34
+msgid "Gender"
+msgstr "Sesso"
+
+#: templates/index.html:35
+msgid "Language"
+msgstr "Lingua"
+
+#: templates/index.html:36
+msgid "Greeting sentences"
+msgstr "Frasi di auguri"
+
+#: templates/index.html:60
+msgid "Add greeting"
+msgstr "Aggiungi Augurio"
+
+#: templates/index.html:61
+msgid "Remove selected greetings"
+msgstr "Rimuovi le voci selezionate"
+
+#: templates/options.html:5
+msgid "Greet Me - Options"
+msgstr "GreetMe - Opzioni"
+
+#: templates/options.html:20
+msgid ""
+"Here you can set the default language used when doesn't exist a greeting "
+"sentence\n"
+"      with the language of your friend:"
+msgstr ""
+"Qui puoi impostare la lingua di default utilizzata quando non esiste una "
+"frase di auguri con la lingua del tuo amico:"
+
+#: templates/options.html:28
+msgid ""
+"Choose the friends whose will receive your automatic greetings.\n"
+"        Uncheck somebody of them if you want to make manual greetings or if "
+"you just want that they don't receive greetings from you:"
+msgstr ""
+"Spunta gli amici che vuoi che ricevano i tuoi messaggi di auguri "
+"automatici.\n"
+"        Deseleziona gli amici se vuoi fare su di essi gli auguri manualmente "
+"o se vuoi che non ricevano messaggi da te:"
+
+#: templates/welcome.html:9
+msgid "Welcome to GreetMe Facebook Application"
+msgstr "Benvenuto nell'applicazione Facebook GreetMe"
+
+#: templates/welcome.html:13
+msgid ""
+"This is a simple application that allow you to make greetings automatically\n"
+"      to your friends for their birthday."
+msgstr ""
+"Questa semplice applicazione ti permette di inviare messaggi di auguri "
+"automaticamente\n"
+"      sul muro dei tuoi amici per il loro giorno di compleanno."
+
+#: templates/welcome.html:17
+msgid ""
+"In order to appear like a realistic greeting in the wall of your friend, the "
+"name of the application\n"
+"      is quite changed in Phone ;)"
+msgstr ""
+"Al fine di apparire un messaggio realistico il nome dell'applicazione      è "
+"stato cambiato in Phone ;)"
+
+#: templates/welcome.html:21
+msgid "In order to use GreetMe you must sign in with your Facebook account:"
+msgstr "Per usare GreetMe devi loggarti con il tuo accout Facebook:"

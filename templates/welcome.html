@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block title %}GreetMe Facebook Application{% endblock %}
+
+{% block body %}
+<div class="welcome">
+  <h1>{% blocktrans %}Welcome to GreetMe Facebook Application{% endblocktrans %}</h1>
+  <img class="promo" alt="Welcome to Greet Me" src="{{ STATIC_URL }}images/splash.jpg">
+  <div class="info">
+    <p>
+      {% blocktrans %}This is a simple application that allow you to make greetings automatically
+      to your friends for their birthday.{% endblocktrans %}
+    </p>
+    <p>
+      {% blocktrans %}In order to appear like a realistic greeting in the wall of your friend, the name of the application
+      is quite changed in Phone ;){% endblocktrans %}
+    </p>
+    <p>
+      {% blocktrans %}In order to use GreetMe you must sign in with your Facebook account:{% endblocktrans %}
+      <div id="login-flow">
+        <fb:login-button perms="publish_stream,offline_access,friends_birthday" show-faces="true"></fb:login-button>
+      </div>
+    </p>
+  </div>
+</div>
+
+{% endblock %}
+

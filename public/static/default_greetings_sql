@@ -1,0 +1,25 @@
+INSERT INTO greetme_greeting ("lang_id","greeting","default") VALUES ('en', 'Happy birthday @first_name!! ;)', 1);
+INSERT INTO greetme_greeting ("lang_id","greeting","default") VALUES ('en', 'Happy birthday friend!! Have a nice day @first_name ;)', 1);
+INSERT INTO greetme_greeting ("lang_id","greeting","default") VALUES ('en', 'Have a nice day @first_name ;)', 1);
+INSERT INTO greetme_greeting ("lang_id","greeting","default") VALUES ('en', 'Happy Birthday @first_name on your very special day', 1);
+INSERT INTO greetme_greeting ("lang_id","greeting","default") VALUES ('en', 'Happy birthday @first_name, may this day always be a special one to remember.', 1);
+INSERT INTO greetme_greeting ("lang_id","greeting","default") VALUES ('en', 'May this year be your best ever @first_name :)', 1);
+INSERT INTO greetme_greeting ("lang_id","greeting","default") VALUES ('en', 'Have a wonderful day and fabulous year @first_name :)', 1);
+INSERT INTO greetme_greeting ("lang_id","greeting","default") VALUES ('en', 'Hope you have the greatest Birthday ever @first_name! ;)', 1);
+
+INSERT INTO greetme_greeting ("lang_id","greeting","default") VALUES ('it', 'Wee @first_name tantissimi auguri di compleanno!!', 1);
+INSERT INTO greetme_greeting ("lang_id","greeting","default") VALUES ('it', 'Auguroni @first_name .... divertiti ciao ;)', 1);
+INSERT INTO greetme_greeting ("lang_id","greeting","default") VALUES ('it', 'Felice compleanno @first_name!', 1);
+INSERT INTO greetme_greeting ("lang_id","greeting","default") VALUES ('it', 'Tanti auguri @first_name! :)', 1);
+INSERT INTO greetme_greeting ("lang_id","greeting","default") VALUES ('it', 'Tantissimi auguri @first_name!', 1);
+INSERT INTO greetme_greeting ("lang_id","greeting","default") VALUES ('it', 'Ti mando i migliori auguri di compleanno @first_name!!', 1);
+INSERT INTO greetme_greeting ("lang_id","greeting","default") VALUES ('it', 'Buon Compleanno @first_name', 1);
+INSERT INTO greetme_greeting ("lang_id","greeting","default") VALUES ('it', 'Tanti auguri di buon compleanno @first_name :)', 1);
+
+INSERT INTO greetme_greeting ("lang_id","greeting","default") VALUES ('es', 'Felicidades @first_name!!! pasalo bien este día! ;)', 1);
+INSERT INTO greetme_greeting ("lang_id","greeting","default") VALUES ('es', 'Felicidades @first_name! Te mando muchos tirones de oreja ;)', 1);
+INSERT INTO greetme_greeting ("lang_id","greeting","default") VALUES ('es', 'Felicidades @first_name!!! Espero que pases un día genial', 1);
+INSERT INTO greetme_greeting ("lang_id","greeting","default") VALUES ('es', 'Feliz cumpleaños @first_name!! Espero que te regalen muchas cosas :)', 1);
+INSERT INTO greetme_greeting ("lang_id","greeting","default") VALUES ('es', 'Felicidades @first_name!!! Espero que tengas una buena fiesta de cumpleaños ;)', 1);
+INSERT INTO greetme_greeting ("lang_id","greeting","default") VALUES ('es', 'Feliz cumple @first_name!!! Espero que celebres este día en buena compañia :)', 1);
+INSERT INTO greetme_greeting ("lang_id","greeting","default") VALUES ('es', 'Hola @first_name!!! Te mando mis mejores deseos en el día de tu cumpleaño ;)', 1);

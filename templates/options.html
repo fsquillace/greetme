@@ -1,0 +1,58 @@
+{% extends "base-logged.html" %}
+
+{% load i18n %}
+
+{% block title %}{% trans "Greet Me - Options" %}{% endblock %}
+
+
+{% block body %}
+
+
+  
+  {% if form.errors %}
+  <p style="color: red;">
+  {% blocktrans count form.errors|length as err %}Please correct the error below.{% plural %}Please correct the errors below.{% endblocktrans %}
+  </p>
+  {% endif %}
+  
+  <form action="" method="post">{% csrf_token %}
+    <p>
+      {% blocktrans %}Here you can set the default language used when doesn't exist a greeting sentence
+      with the language of your friend:{% endblocktrans %}
+    </p>
+    <table>
+    {{ form.as_table }}
+    </table>
+    <br/>
+      <p>
+        {% blocktrans %}Choose the friends whose will receive your automatic greetings.
+        Uncheck somebody of them if you want to make manual greetings or if you just want that they don't receive greetings from you:{% endblocktrans %}
+      </p>
+    <table>
+      {% for f in excluded_friends|dictsort:"name" %}
+        {% if forloop.counter0|divisibleby:3 %}<tr>{% endif %}
+          <td>
+            <input type="checkbox" id="select" value="{{f.id}}" name="select"/>
+            <img src="http://graph.facebook.com/{{f.id}}/picture"/>
+            <br/>
+            {{f.name}}
+          </td>
+        {% if forloop.counter|divisibleby:3 or forloop.last %}</tr>{% endif %}
+      {% endfor %}
+      {% for f in included_friends|dictsort:"name" %}
+        {% if forloop.counter0|divisibleby:3 %}<tr>{% endif %}
+          <td>
+            <input type="checkbox" id="select" value="{{f.id}}" name="select" checked="checked"/>
+            <img src="http://graph.facebook.com/{{f.id}}/picture"/>
+            <br/>
+            {{f.name}}
+          </td>
+        {% if forloop.counter|divisibleby:3 or forloop.last %}</tr>{% endif %}
+      {% endfor %}
+      
+    </table>
+    
+    <input type="submit" value="{% trans 'Save' %}"/>
+    <input type="button" value="{% trans 'Back' %}" onclick="location.href='/greetme/'" />
+  </form>
+{% endblock %}

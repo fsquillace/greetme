@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="P3P" content='CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"'>
+    <title>{% block title %}Greet Me{% endblock %}</title>
+    <link rel="stylesheet" href="{{ STATIC_URL }}/css/base.css" type="text/css" media="screen"/>
+    {% block head %}{% endblock %}
+  </head>
+  
+  <body>
+    <script>
+      function handleSessionChange(response) {
+        if (( {{user_id}} && !response.session) ||
+            {{user_id}} != response.session.uid) {
+          goHome();
+        }
+      }
+      
+      function goHome() {
+        top.location = '{{canvas_url}}';
+      }
+    </script>
+    
+    <div id="fb-root"></div>
+    
+    <script>
+      
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId  : '{{ FACEBOOK_APP }}',
+          status : true, // check login status
+          cookie : true, // enable cookies to allow the server to access the session
+          xfbml  : true, // parse XFBML
+          oauth  : true // enable OAuth2.0
+        });
+        FB.Canvas.scrollTo(0,0);
+        {% block subscribe %} {% endblock %}
+        FB.Canvas.setAutoResize(); //set size according to iframe content size
+        FB.Event.subscribe('auth.sessionChange', handleSessionChange);
+      
+        // ensure we're always running on apps.facebook.com
+        if (window == top) { goHome(); }
+        FB.Event.subscribe('auth.login', function(response) {
+          goHome();
+          // Reload the entire page. Could also do an Ajax request and dynamically
+          // update the already loaded page.
+          //window.location.reload(true);
+        });
+      
+      };
+      
+      
+      (function(d){
+         var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+         js = d.createElement('script'); js.id = id; js.async = true;
+         js.src = "//connect.facebook.net/en_US/all.js";
+         d.getElementsByTagName('head')[0].appendChild(js);
+       }(document));
+       
+      <!--(function() {-->
+      <!--var e = document.createElement('script');-->
+      <!--e.type = 'text/javascript';-->
+      <!--e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';-->
+      <!--e.async = true;-->
+      <!--document.getElementById('fb-root').appendChild(e);-->
+      <!--}());-->
+    </script>
+    
+    <div id="doc">
+      <div id="top-wrapper"> 
+        <div id="top">
+          <ul id="current-language" class="sf-menu"> 
+            <li class="current"> 
+              <a id="language-selector"> 
+                <span>&darr; Language</span> 
+              </a> 
+              <ul id="languages">
+                <form name="lang_form" action="/i18n/set_lang/" method="post">
+                  {% csrf_token %}
+                  <input name="next" type="hidden" value="" />
+                  <input name="language" type="hidden" value="" />
+                  <li><a onclick="lang_form.language.value='en'; document.lang_form.submit();">
+                    <span class="language-label">English</span> 
+                  </a></li>
+                  <li><a onclick="lang_form.language.value='it'; document.lang_form.submit();">
+                    <span class="language-label">Italiano</span>
+                  </a></li>
+                  <li><a onclick="lang_form.language.value='es'; document.lang_form.submit();">
+                    <span class="language-label">Español</span> 
+                  </a></li> 
+                  
+                </form> 
+              </ul>
+            </li>
+          </ul>
+          {% block top-items %}{% endblock%}
+        </div>
+      </div>
+      <div id="content">{% block body %}{% endblock %}</div>
+      <br/>
+    </div>
+
+  </body>
+  
+</html>

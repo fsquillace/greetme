@@ -1,0 +1,70 @@
+{% extends "base-logged.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Greet Me - Add greeting" %}{% endblock %}
+
+
+{% block body %}
+
+  <p>
+  {% blocktrans with user.name as name %}Add your greeting sentence {{name}}!!!{% endblocktrans %}
+  </p>
+
+  <p>{% trans "Put @first_name or @last_name so the application will replace them with first and last name of your friend." %}</p>
+  <p>{% blocktrans %}For example: "Happy birthday @first_name!!!"
+    It will be rendered as "Happy birthday David!!!"{% endblocktrans %}
+  </p>
+  <!--<p>To make more realistic sentences you can reduce the name of your friend.</p>-->
+  <!--<p>For example: "Happy birthday @first_name3"-->
+    <!--It will be rendered as "Happy birthday Jos!!!"-->
+  <!--</p>-->
+  {% if form.errors %}
+  <p style="color: red;">
+  {% blocktrans count form.errors|length as err %}Please correct the error below.{% plural %}Please correct the errors below.{% endblocktrans %}
+  </p>
+  {% endif %}
+  <form action="" method="post">{% csrf_token %}
+  
+    <div class="field{% if form.lang.errors %} errors{% endif %}">
+      {% if form.lang.errors %}
+      <ul>
+        {% for error in form.lang.errors %}
+        <li><strong>{{ error }}</strong></li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+      <label for="id_lang">{% trans "Language:" %}</label>
+      {{ form.lang }}
+    </div>
+    
+    <div class="field{% if form.lang.errors %} errors{% endif %}">
+      {% if form.gender.errors %}
+      <ul>
+        {% for error in form.gender.errors %}
+        <li><strong>{{ error }}</strong></li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+      <label for="id_gender">{% trans "Gender:" %}</label>
+      {{ form.gender }}
+    </div>
+    
+    <div class="field{% if form.greeting.errors %} errors{% endif %}">
+      {% if form.greeting.errors %}
+      <ul>
+        {% for error in form.greeting.errors %}
+        <li><strong>{{ error }}</strong></li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+      <label for="id_greeting">{% trans "Greeting:" %}</label>
+      {{ form.greeting }}
+    </div>
+  
+    <!--{{ form.as_table }}-->
+    <input type="submit" value="{% trans 'Save' %}"/>
+    <input type="button" value="{% trans 'Back' %}" onclick="location.href='/greetme/'" />
+  </form>
+
+
+{% endblock %}

@@ -1,0 +1,80 @@
+{% extends "base-logged.html" %}
+
+{% load i18n %}
+
+{% block title %}{% trans "Greet Me - Home" %}{% endblock %}
+
+
+{% block body %}
+
+  <p>
+    <img style="float:left;margin-right:10px" src="http://graph.facebook.com/{{ uid }}/picture"/>
+    {% blocktrans %}Welcome {{ first_name }}!!!{% endblocktrans %}
+  </p>
+
+  <p>{% blocktrans %}This application is very simple!!!
+  Just add your greeting sentences and the application automatically will give greetings at your friends!!
+  That's all!!!{% endblocktrans %}
+  </p>
+  <p>{% blocktrans %}<b>Warning:</b> If you change your Facebook password remember to come back in this page of the GreetMe app (Just go to Facebook Homepage and click on the Phone application in the left side).
+  In this way, GreetMe can update the new access token matched with the new password and send greetings to your friends. Otherwise, GreetMe couldn't work for you until you won't do that.{% endblocktrans %}
+  </p>
+
+  <form action="/greetme/remove/" method="POST">{% csrf_token %}
+
+    <div class="listing clear">
+      <table class="alws" width="100%" cellspacing="0" cellpadding="4" border="0">  
+      
+        <thead>
+          <tr>
+            <th width="10%">
+              {% trans "Select" %}
+              <!--<input type="checkbox" id="select_all" onClick="select.checked=yes" name="select_all"/>-->
+            </th>
+            <th width="10%">{% trans "Gender" %}</th>
+            <th width="20%">{% trans "Language" %}</th>
+            <th>{% trans "Greeting sentences" %}</th>
+          </tr>
+        </thead>
+        <tbody>
+      
+          {% for greet in greets %}
+          <tr class="odd" onmouseout="this.className='odd'" onmouseover="this.className='highlight'">
+            <td><input type="checkbox" id="select" value="{{greet.id}}" name="select"/></td>
+            <td>
+              {% if greet.gender %}
+                {{ greet.gender}}
+              {% else %}
+                G
+              {% endif %}
+            </td>
+            <td>{{ greet.lang}}</td>
+            <td>{{ greet.greeting}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    
+    </div>
+    
+    <input type="button" name="add" value="{% trans 'Add greeting'%} " onclick="window.location='/greetme/add/'" />
+    <input type="submit" name="remove" value="{% trans 'Remove selected greetings'%}"/>
+  </form>
+
+  
+<!--<script type="text/javascript">-->
+
+<!--var select=document.getElementById("select_all")-->
+
+<!--select.onchange=function(){ //run some code when "onchange" event fires-->
+ <!--document.getElementById("select").checked = this.checked-->
+ <!--var chosenoption=this.options[this.selectedIndex] //this refers to "selectmenu"-->
+ <!--if (chosenoption.value!="nothing"){-->
+  <!--window.open(chosenoption.value, "", "") //open target site (based on option's value attr) in new window-->
+ <!--}-->
+<!--}-->
+
+<!--</script>  -->
+  
+
+{% endblock %}
